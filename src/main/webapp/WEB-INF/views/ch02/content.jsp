@@ -113,7 +113,7 @@
                   url:"${pageContext.request.contextPath}/ch02/method",
                   method: "DELETE",
                   contentType: "application/json; charset=UTF-8",
-                  data: json.sitringfy({bno:3}),
+                  data: JSON.stringify({bno:4}),
                	  success: function(data){
                    	  
                   }
