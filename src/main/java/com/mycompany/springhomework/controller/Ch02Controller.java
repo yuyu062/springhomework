@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycompany.springhomework.dto.Ch02Dto;
 import com.mycompany.springhomework.dto.Ch02FileInfo;
+import com.mycompany.springhomework.interceptor.Auth;
+import com.mycompany.springhomework.interceptor.Auth.Role;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,7 +45,7 @@ public class Ch02Controller {
 	 
 	 //@PutMapping("/method")
 	 @RequestMapping(value="/method", method=RequestMethod.PUT)
-	 public void method3(Ch02Dto dto, HttpServletResponse response) throws Exception{
+	 public void method3(@RequestBody Ch02Dto dto, HttpServletResponse response) throws Exception{
 		 log.info("bkind: " + dto.getBkind());
 		 log.info("bno: " + dto.getBno());
 		 JSONObject root = new JSONObject();
@@ -110,6 +112,12 @@ public class Ch02Controller {
 		 Ch02FileInfo fileinfo = new Ch02FileInfo();
 		 fileinfo.setFileName("photo9.jpg");
 		 return fileinfo;
+	 }
+	 @RequestMapping("/filterAndInterceptor")
+	 @Auth(Role.ADMIN)
+	 public String adminMethod() {
+		 log.info("실행");
+		 return "/ch02/adminPage";
 	 }
 }
 
