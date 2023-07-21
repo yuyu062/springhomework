@@ -20,7 +20,7 @@ public class Ch02InterceptorB implements HandlerInterceptor{
         	return true;
         }else {
         	if(auth.value()== Role.ADMIN) {
-        		boolean isAdmin = true;
+        		boolean isAdmin = false;
         		if(isAdmin) {
         			return true;
         		}else {
