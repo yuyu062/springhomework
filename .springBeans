@@ -9,6 +9,8 @@
 	<configs>
 		<config>src/main/resources/spring/dispatcher/ch01-view-resolver.xml</config>
 		<config>src/main/resources/spring/dispatcher/ch02-interceptor.xml</config>
+		<config>src/main/resources/spring/root/ch12-create-bean-di.xml</config>
+		<config>src/main/resources/spring/root/ch14-datasource.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/resources/spring/root/ch01-component-scan.xml</config>
