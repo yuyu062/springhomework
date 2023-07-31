@@ -13,14 +13,15 @@ import lombok.extern.slf4j.Slf4j;
 
 @Repository
 @Slf4j
-public class Ch13BoardDaoOld {
+public class Ch13BoardDaoOldImpl implements BoardDaoOld{
    @Resource
    private SqlSessionTemplate sst;
    
+   @Override
    public void insert(Ch13Board board) {
       sst.insert("com.mycompany.springhomework.dao.mybatis.Ch13BoardDao.insert", board);
    }
-   
+   @Override
    public List<Ch13Board> selectAll() {
       List<Ch13Board> list = sst.selectList(
             "com.mycompany.springhomework.dao.mybatis.Ch13BoardDao.selectAll"
@@ -31,6 +32,7 @@ public class Ch13BoardDaoOld {
       }
       return list;
    }
+   @Override
    public void updateByBno() {
 	   List<Ch13Board> list = selectAll();
 	   Ch13Board board = list.get(0);
@@ -42,7 +44,7 @@ public class Ch13BoardDaoOld {
 			   board
 	   );
    }
-   
+   @Override
    public void deleteByBno() {
 	   int bno = 42;
 	   sst.delete(

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.springhomework.dao.Ch13BoardDaoOld;
+import com.mycompany.springhomework.dao.Ch13BoardDaoOldImpl;
 import com.mycompany.springhomework.dto.Ch13Board;
 
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ public class Ch13Controller {
 	}
 	
 	@Resource
-	private Ch13BoardDaoOld ch13BoardDaoOld;
+	private Ch13BoardDaoOldImpl ch13BoardDaoOld;
 	
 	@GetMapping("/insertBoard")
 	public String insertBoard() {
