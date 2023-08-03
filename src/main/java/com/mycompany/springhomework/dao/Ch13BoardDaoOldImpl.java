@@ -19,12 +19,12 @@ public class Ch13BoardDaoOldImpl implements BoardDaoOld{
    
    @Override
    public void insert(Ch13Board board) {
-      sst.insert("com.mycompany.springhomework.dao.mybatis.Ch13BoardDao.insert", board);
+      sst.insert("com.mycompany.springhomework.dao.Ch13BoardDao.insert", board);
    }
    @Override
    public List<Ch13Board> selectAll() {
       List<Ch13Board> list = sst.selectList(
-            "com.mycompany.springhomework.dao.mybatis.Ch13BoardDao.selectAll"
+            "com.mycompany.springhomework.dao.Ch13BoardDao.selectAll"
       );
       for(Ch13Board board : list) {
        log.info(board.toString());  
@@ -40,7 +40,7 @@ public class Ch13BoardDaoOldImpl implements BoardDaoOld{
 	   board.setBcontent("변경된 내용");
 	   
 	   sst.update(
-			   "com.mycompany.springhomework.dao.mybatis.Ch13BoardDao.updateByBno",
+			   "com.mycompany.springhomework.dao.Ch13BoardDao.updateByBno",
 			   board
 	   );
    }
@@ -48,7 +48,7 @@ public class Ch13BoardDaoOldImpl implements BoardDaoOld{
    public void deleteByBno() {
 	   int bno = 42;
 	   sst.delete(
-			   "com.mycompany.springhomework.dao.mybatis.Ch13BoardDao.deleteByBno", 
+			   "com.mycompany.springhomework.dao.Ch13BoardDao.deleteByBno", 
 			   bno
 	   );
    }

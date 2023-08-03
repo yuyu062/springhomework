@@ -16,3 +16,4 @@ public interface BoardDaoOld {
 	   public void updateByBno(); 
 	   public void deleteByBno();
 }
+	
